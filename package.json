@@ -1,0 +1,31 @@
+{
+  "name": "ticket-creator",
+  "version": "1.0.0",
+  "description": "This project is useful to create tickets in ticket management systems like, zendesk, freshdesk. It's easy to integrate with any other new ticket management system also.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saikumar-everest/ticket-creator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saikumar-everest/ticket-creator/issues"
+  },
+  "homepage": "https://github.com/saikumar-everest/ticket-creator#readme",
+  "dependencies": {
+    "@nestjs/core": "^7.0.7",
+    "@nestjs/graphql": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.3.0",
+    "prettier": "^2.0.4"
+  }
+}
