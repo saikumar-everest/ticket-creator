@@ -5,10 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
+    "backend:serve": "nest start",
+    "backend:dev": "nest start --watch",
+    "backend:build": "nest build",
+    "ui:serve": "gatsby serve",
     "ui:dev": "gatsby develop",
-    "format": "prettier --write \"**/*.[jt]s\"",
+    "ui:build": "gatsby build",
+    "ui:clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,ts,jsx,json,md}\"",
     "rm-unused-imports": "tslint --config tslint-imports.json --project .",
     "rm-unused-imports:fix": "tslint --config tslint-imports.json --fix --project ."
   },
