@@ -1,14 +1,13 @@
 import {TicketContract} from '../common/ticket-contract';
 import {Injectable} from '@nestjs/common';
+import {BaseTicketManager} from './base-ticket-manager';
 
-const APIS = {
-  tickets: '/tickets',
-};
+const APIS = {};
 
 @Injectable()
-export class Freshdesk implements TicketContract {
+export class Freshdesk extends BaseTicketManager implements TicketContract {
   apis(): object {
-    return APIS;
+    return {...this.commonApis, ...APIS};
   }
   ticketLocation(): string {
     return 'data';
