@@ -2,15 +2,15 @@ import {ObjectType, Field} from '@nestjs/graphql';
 
 @ObjectType()
 export class Ticket {
-  @Field(type => String)
+  @Field(() => String)
   id: string;
 
-  @Field(type => String)
+  @Field(() => String)
   subject: string;
 
-  @Field(type => String)
+  @Field(() => String)
   status: string;
 
-  @Field(type => String, {nullable: true})
+  @Field(() => String, {nullable: true})
   priority: string;
 }
