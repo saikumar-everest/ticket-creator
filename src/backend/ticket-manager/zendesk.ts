@@ -1,8 +1,15 @@
 import {TicketContract} from '../common/ticket-contract';
 import {Injectable} from '@nestjs/common';
 
+const APIS = {
+  tickets: '/tickets',
+};
+
 @Injectable()
 export class Zendesk implements TicketContract {
+  apis(): object {
+    return APIS;
+  }
   ticketLocation(): string {
     return 'data.ticket';
   }

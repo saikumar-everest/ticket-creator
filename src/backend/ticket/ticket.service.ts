@@ -1,18 +1,15 @@
 import {Injectable} from '@nestjs/common';
 import {RestClient} from '../rest-client/rest-client';
-import {Freshdesk} from '../ticket-manager/freshdesk';
-import {Zendesk} from '../ticket-manager/zendesk';
 import {Ticket} from './model/ticket.model';
+import {TicketUtil} from '../common/ticket-util';
 
 @Injectable()
 export class TicketService {
-  constructor(private readonly freshdesk: Freshdesk, private readonly zendesk: Zendesk) {}
+  constructor(private readonly ticketUtil: TicketUtil) {}
 
   getAll(ticketType: string): Promise<Ticket[]> {
-    return this.restClient(ticketType).doGet('/tickets');
-  }
+    const ticketManager = this.ticketUtil.getTicketManager(ticketType);
 
-  private restClient(ticketType: string): RestClient {
-    return new RestClient(ticketType === 'freshdesk' ? this.freshdesk : this.zendesk);
+    return new RestClient(ticketManager).doGet(ticketManager.apis().tickets);
   }
 }

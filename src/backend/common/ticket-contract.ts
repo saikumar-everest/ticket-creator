@@ -3,4 +3,5 @@ export interface TicketContract {
   authParams(): object;
   ticketLocation(): string;
   ticketsLocation(): string;
+  apis(): any;
 }
