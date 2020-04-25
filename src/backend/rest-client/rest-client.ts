@@ -1,10 +1,10 @@
-import {TicketContract} from '../common/ticket-contract';
+import {TicketManagerContract} from '../common/ticket-manager-contract';
 import {compact, get} from 'lodash';
 import {Ticket} from '../ticket/model/ticket.model';
 import * as axios from 'axios';
 
 export class RestClient {
-  constructor(private readonly ticketManager: TicketContract) {}
+  constructor(private readonly ticketManager: TicketManagerContract) {}
 
   private baseUrl(path: string): string {
     return compact([this.ticketManager.url(), path]).join('');

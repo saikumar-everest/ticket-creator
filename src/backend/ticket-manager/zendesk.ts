@@ -1,13 +1,29 @@
-import {TicketContract} from '../common/ticket-contract';
+import {TicketManagerContract} from '../common/ticket-manager-contract';
 import {Injectable} from '@nestjs/common';
 import {BaseTicketManager} from './base-ticket-manager';
+import {TicketInput} from '../ticket/model/ticket-input.model';
+import {BaseTicketInput} from '../ticket/model/base-ticket-input.model';
+import {ZendeskTicketInput} from '../ticket/model/zendesk/zendesk-ticket-input.model';
 
 const APIS = {
   tickets: '/requests',
 };
 
 @Injectable()
-export class Zendesk extends BaseTicketManager implements TicketContract {
+export class Zendesk extends BaseTicketManager implements TicketManagerContract {
+  build(ticketInput: TicketInput): BaseTicketInput {
+    const {description, subject, status} = ticketInput;
+    const zendeskTicket: ZendeskTicketInput = {
+      request: {
+        comment: {
+          body: description,
+        },
+        subject,
+        status,
+      },
+    };
+    return zendeskTicket;
+  }
   apis(): object {
     return {...this.commonApis, ...APIS};
   }

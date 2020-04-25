@@ -9,11 +9,11 @@ export class Ticket {
   subject: string;
 
   @Field(() => String, {nullable: true})
-  description: string;
+  description?: string;
 
   @Field(() => String)
   status: string;
 
   @Field(() => String, {nullable: true})
-  priority: string;
+  priority?: string;
 }
