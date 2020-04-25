@@ -8,6 +8,9 @@ export class Ticket {
   @Field(() => String)
   subject: string;
 
+  @Field(() => String, {nullable: true})
+  description: string;
+
   @Field(() => String)
   status: string;
 
