@@ -10,9 +10,7 @@ export class ZendeskRequestInput {
   @IsNotEmpty()
   subject: string;
 
-  @IsNotEmpty()
-  status: string;
+  status?: string;
 
-  @IsNotEmpty()
-  priority: string;
+  priority?: string;
 }
