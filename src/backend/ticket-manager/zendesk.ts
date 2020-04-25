@@ -2,7 +2,9 @@ import {TicketContract} from '../common/ticket-contract';
 import {Injectable} from '@nestjs/common';
 import {BaseTicketManager} from './base-ticket-manager';
 
-const APIS = {};
+const APIS = {
+  tickets: '/requests',
+};
 
 @Injectable()
 export class Zendesk extends BaseTicketManager implements TicketContract {
@@ -10,10 +12,10 @@ export class Zendesk extends BaseTicketManager implements TicketContract {
     return {...this.commonApis, ...APIS};
   }
   ticketLocation(): string {
-    return 'data.ticket';
+    return 'data.request';
   }
   ticketsLocation(): string {
-    return 'data.tickets';
+    return 'data.requests';
   }
   url(): string {
     return process.env.ZENDESK_SERVER_URL;
