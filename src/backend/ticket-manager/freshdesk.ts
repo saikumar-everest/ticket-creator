@@ -7,6 +7,7 @@ import {FreshdeskTicketInput} from '../ticket/model/freshdesk/freshdesk-ticket-i
 
 const APIS = {
   tickets: '/tickets?include=description',
+  ticket: '/tickets',
 };
 const statusMap = {
   open: 2,
@@ -14,16 +15,23 @@ const statusMap = {
   resolved: 4,
   closed: 5,
 };
+const priorityMap = {
+  low: 1,
+  medium: 2,
+  high: 3,
+  urgent: 4,
+};
 
 @Injectable()
 export class Freshdesk extends BaseTicketManager implements TicketManagerContract {
   build(ticketInput: TicketInput): BaseTicketInput {
-    const {description, email, subject, status} = ticketInput;
+    const {description, email, subject, status, priority} = ticketInput;
     const freshdeskTicketInput: FreshdeskTicketInput = {
       description,
       email,
       subject,
       status: statusMap[status?.toLowerCase() || `open`],
+      priority: priorityMap[priority?.toLowerCase() || `low`],
     };
     return freshdeskTicketInput;
   }

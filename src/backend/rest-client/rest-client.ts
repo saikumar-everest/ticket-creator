@@ -11,15 +11,31 @@ export class RestClient {
   }
 
   async doGet(path: string, params?: object): Promise<Ticket[]> {
+    return this.dispatch('GET', path, {params}, this.ticketManager.ticketsLocation()) as Promise<Ticket[]>;
+  }
+
+  async doPost(path: string, data: object): Promise<Ticket> {
+    return this.dispatch('POST', path, {data}, this.ticketManager.ticketLocation()) as Promise<Ticket>;
+  }
+
+  async dispatch(
+    method: axios.Method,
+    path: string,
+    options: {
+      params?: object;
+      data?: object;
+      headers?: object;
+    } = {headers: {'Content-Type': 'application/json'}},
+    responseDataLocation: string,
+  ): Promise<Ticket | Ticket[]> {
     const config: axios.AxiosRequestConfig = {
       baseURL: this.baseUrl(path),
-      headers: {'Content-Type': 'application/json'},
-      method: 'GET',
-      params,
+      method,
       auth: this.ticketManager.authParams() as axios.AxiosBasicCredentials,
+      ...options,
     };
 
     const response = await axios.default(config);
-    return get(response, this.ticketManager.ticketsLocation());
+    return get(response, responseDataLocation);
   }
 }

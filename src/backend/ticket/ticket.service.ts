@@ -15,12 +15,9 @@ export class TicketService {
   }
 
   create(ticketInput: TicketInput): Promise<Ticket> {
-    this.ticketUtil.getTicketManager(ticketInput.ticketManager).build(ticketInput);
-    return Promise.resolve({
-      id: '34',
-      subject: 'Something',
-      description: 'Another thing',
-      status: 'Todo',
-    });
+    const ticketManager = this.ticketUtil.getTicketManager(ticketInput.ticketManager);
+    const transformedTicket = ticketManager.build(ticketInput);
+
+    return new RestClient(ticketManager).doPost(ticketManager.apis().ticket, transformedTicket);
   }
 }

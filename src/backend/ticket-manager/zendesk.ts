@@ -7,12 +7,13 @@ import {ZendeskTicketInput} from '../ticket/model/zendesk/zendesk-ticket-input.m
 
 const APIS = {
   tickets: '/requests',
+  ticket: '/requests',
 };
 
 @Injectable()
 export class Zendesk extends BaseTicketManager implements TicketManagerContract {
   build(ticketInput: TicketInput): BaseTicketInput {
-    const {description, subject, status} = ticketInput;
+    const {description, subject, status, priority} = ticketInput;
     const zendeskTicket: ZendeskTicketInput = {
       request: {
         comment: {
@@ -20,6 +21,7 @@ export class Zendesk extends BaseTicketManager implements TicketManagerContract 
         },
         subject,
         status,
+        priority,
       },
     };
     return zendeskTicket;
