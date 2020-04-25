@@ -12,9 +12,11 @@
     "ui:dev": "gatsby develop",
     "ui:build": "gatsby build",
     "ui:clean": "gatsby clean",
-    "format": "prettier --write \"**/*.{js,ts,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,ts,jsx,json,md,graphql}\"",
     "rm-unused-imports": "tslint --config tslint-imports.json --project .",
-    "rm-unused-imports:fix": "tslint --config tslint-imports.json --fix --project ."
+    "rm-unused-imports:fix": "tslint --config tslint-imports.json --fix --project .",
+    "lint": "tslint --config tslint.json --project .",
+    "checks": "yarn test && yarn lint && yarn format && yarn rm-unused-imports"
   },
   "repository": {
     "type": "git",
@@ -67,9 +69,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn test",
-      "prettier --write",
-      "yarn rm-unused-imports"
+      "yarn checks"
     ],
     "*.json": "prettier --write",
     "*.graphql": "prettier --write"

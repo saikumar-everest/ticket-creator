@@ -15,8 +15,7 @@ export class TicketService {
   }
 
   create(ticketInput: TicketInput): Promise<Ticket> {
-    const transformedTicket = this.ticketUtil.getTicketManager(ticketInput.ticketManager).build(ticketInput);
-    console.log(transformedTicket);
+    this.ticketUtil.getTicketManager(ticketInput.ticketManager).build(ticketInput);
     return Promise.resolve({
       id: '34',
       subject: 'Something',
