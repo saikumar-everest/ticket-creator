@@ -6,6 +6,10 @@ This project is useful to create tickets in ticket management systems like, zend
 
 You will find all the UI related code in `src/pages` and backend code in `src/backend`.
 
+### Pre-requisites to run the application
+
+1. Create a `.env` file from `env.sample` file in root folder, and add all the required environment variables.
+
 ### How to run application?
 
 1. Install project dependencies.
