@@ -18,7 +18,7 @@ export class RestClient {
     return this.dispatch('POST', path, {data}, this.ticketManager.ticketLocation()) as Promise<Ticket>;
   }
 
-  async dispatch(
+  private async dispatch(
     method: axios.Method,
     path: string,
     options: {
