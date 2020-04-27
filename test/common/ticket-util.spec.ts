@@ -1,6 +1,6 @@
-import {TicketUtil} from 'src/backend/common/ticket-util';
-import {Freshdesk} from 'src/backend/ticket-manager/freshdesk';
-import {Zendesk} from 'src/backend/ticket-manager/zendesk';
+import {TicketUtil} from 'src/common/ticket-util';
+import {Freshdesk} from 'src/ticket-manager/freshdesk';
+import {Zendesk} from 'src/ticket-manager/zendesk';
 
 describe('Ticket util unit tests', () => {
   it('should return freshdesk ticket manager if input given is freshdesk', () => {

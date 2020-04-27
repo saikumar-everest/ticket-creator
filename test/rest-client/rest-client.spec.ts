@@ -1,7 +1,7 @@
-import {RestClient} from 'src/backend/rest-client/rest-client';
-import {TicketManagerContract} from 'src/backend/common/ticket-manager-contract';
-import {TicketInput} from 'src/backend/ticket/model/ticket-input.model';
-import {BaseTicketInput} from 'src/backend/ticket/model/base-ticket-input.model';
+import {RestClient} from 'src/rest-client/rest-client';
+import {TicketManagerContract} from 'src/common/ticket-manager-contract';
+import {TicketInput} from 'src/ticket/model/ticket-input.model';
+import {BaseTicketInput} from 'src/ticket/model/base-ticket-input.model';
 import * as axios from 'axios';
 
 class TestTicketManager implements TicketManagerContract {

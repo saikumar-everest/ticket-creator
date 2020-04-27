@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand --passWithNoTests",
-    "backend:serve": "nest start",
-    "backend:dev": "nest start --watch",
-    "backend:build": "nest build",
+    "serve": "nest start",
+    "start": "nest start --watch",
+    "build": "nest build",
     "format": "prettier --write \"**/*.{js,ts,jsx,json,md,graphql}\"",
     "rm-unused-imports": "tslint --config tslint-imports.json --project .",
     "rm-unused-imports:fix": "tslint --config tslint-imports.json --fix --project .",

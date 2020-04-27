@@ -1,5 +1,5 @@
-import {TicketManagerValidator} from 'src/backend/ticket/pipes/ticket-manager-validator.pipe';
-import {TicketInput} from 'src/backend/ticket/model/ticket-input.model';
+import {TicketManagerValidator} from 'src/ticket/pipes/ticket-manager-validator.pipe';
+import {TicketInput} from 'src/ticket/model/ticket-input.model';
 
 describe('Ticket manager validator pipe unit tests', () => {
   it('should return freshdesk in lowercase as its a valid supporting ticket manager', () => {

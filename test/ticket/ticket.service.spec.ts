@@ -1,9 +1,9 @@
-import {TicketService} from 'src/backend/ticket/ticket.service';
-import {TicketUtil} from 'src/backend/common/ticket-util';
-import {RestClient} from 'src/backend/rest-client/rest-client';
-import {TicketInput} from 'src/backend/ticket/model/ticket-input.model';
+import {TicketService} from 'src/ticket/ticket.service';
+import {TicketUtil} from 'src/common/ticket-util';
+import {RestClient} from 'src/rest-client/rest-client';
+import {TicketInput} from 'src/ticket/model/ticket-input.model';
 
-jest.mock('src/backend/rest-client/rest-client');
+jest.mock('src/rest-client/rest-client');
 
 describe('Ticket service unit tests', () => {
   let ticketUtil;

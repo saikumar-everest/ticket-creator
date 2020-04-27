@@ -11,7 +11,7 @@ This project is useful to create tickets in ticket management systems like, zend
 1. Install project dependencies.
    `yarn`
 2. Build backend and serve
-   `yarn backend:build & yarn backend:serve`
+   `yarn build & yarn serve`
    Backend should be accessed at http://localhost:3000
 
 ### How to run application for development?
@@ -19,7 +19,7 @@ This project is useful to create tickets in ticket management systems like, zend
 1. Install project dependencies.
    `yarn`
 2. Watch and serve backend
-   `yarn backend:dev`
+   `yarn start`
    Backend should be accessed at http://localhost:3000
 
 Access the backend graphql endpoint at http://localhost:3000/graphql (and for graphql playground ping the same url in browser).
