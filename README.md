@@ -26,6 +26,6 @@ Access the backend graphql endpoint at http://localhost:3000/graphql (and for gr
 
 ### How to run unit tests?
 
-    `yarn test`
+    yarn test
 
 We run few pre-commit hooks for safety of code.
