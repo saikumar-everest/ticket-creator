@@ -1,6 +1,6 @@
 import {TicketManagerContract} from './ticket-manager-contract';
-import {Zendesk} from '../ticket-manager/zendesk';
-import {Freshdesk} from '../ticket-manager/freshdesk';
+import {Zendesk} from './zendesk';
+import {Freshdesk} from './freshdesk';
 import {Injectable} from '@nestjs/common';
 
 @Injectable()

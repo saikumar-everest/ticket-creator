@@ -3,7 +3,7 @@ import {Resolver, Query, Args, Mutation} from '@nestjs/graphql';
 import {TicketService} from './ticket.service';
 import {TicketManagerValidator} from './pipes/ticket-manager-validator.pipe';
 import {TicketInput} from './model/ticket-input.model';
-import {TicketUtil} from '../common/ticket-util';
+import {TicketUtil} from '../ticket-manager/ticket-util';
 
 @Resolver(() => Ticket)
 export class TicketResolver {

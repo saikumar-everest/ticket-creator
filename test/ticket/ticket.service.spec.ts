@@ -1,5 +1,5 @@
 import {TicketService} from 'src/ticket/ticket.service';
-import {TicketUtil} from 'src/common/ticket-util';
+import {TicketUtil} from 'src/ticket-manager/ticket-util';
 import {RestClient} from 'src/rest-client/rest-client';
 import {TicketInput} from 'src/ticket/model/ticket-input.model';
 

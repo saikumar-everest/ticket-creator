@@ -1,4 +1,4 @@
-import {TicketUtil} from 'src/common/ticket-util';
+import {TicketUtil} from 'src/ticket-manager/ticket-util';
 import {Freshdesk} from 'src/ticket-manager/freshdesk';
 import {Zendesk} from 'src/ticket-manager/zendesk';
 

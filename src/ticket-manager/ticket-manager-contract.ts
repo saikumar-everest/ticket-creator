@@ -8,4 +8,5 @@ export interface TicketManagerContract {
   ticketsLocation(): string;
   apis(): any;
   build(ticketInput: TicketInput): BaseTicketInput;
+  managerAsString(): string;
 }

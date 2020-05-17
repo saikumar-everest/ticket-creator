@@ -1,10 +1,13 @@
 import {RestClient} from 'src/rest-client/rest-client';
-import {TicketManagerContract} from 'src/common/ticket-manager-contract';
+import {TicketManagerContract} from 'src/ticket-manager/ticket-manager-contract';
 import {TicketInput} from 'src/ticket/model/ticket-input.model';
 import {BaseTicketInput} from 'src/ticket/model/base-ticket-input.model';
 import * as axios from 'axios';
 
 class TestTicketManager implements TicketManagerContract {
+  managerAsString(): string {
+    return '';
+  }
   url(): string {
     return 'test-ticket-rest-endpoint';
   }

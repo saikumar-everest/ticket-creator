@@ -1,9 +1,10 @@
-import {TicketManagerContract} from '../common/ticket-manager-contract';
+import {TicketManagerContract} from './ticket-manager-contract';
 import {Injectable} from '@nestjs/common';
 import {BaseTicketManager} from './base-ticket-manager';
 import {TicketInput} from '../ticket/model/ticket-input.model';
 import {BaseTicketInput} from '../ticket/model/base-ticket-input.model';
 import {FreshdeskTicketInput} from '../ticket/model/freshdesk/freshdesk-ticket-input.model';
+import {FRESHDESK} from 'src/constants';
 
 const APIS = {
   tickets: '/tickets?include=description',
@@ -52,5 +53,8 @@ export class Freshdesk extends BaseTicketManager implements TicketManagerContrac
       username: process.env.FRESHDESK_API_KEY,
       password: 'X',
     };
+  }
+  managerAsString(): string {
+    return FRESHDESK;
   }
 }

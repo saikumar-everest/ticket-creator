@@ -6,6 +6,9 @@ export class Ticket {
   id: string;
 
   @Field(() => String)
+  ticketManager: string;
+
+  @Field(() => String)
   subject: string;
 
   @Field(() => String, {nullable: true})

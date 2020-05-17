@@ -1,9 +1,10 @@
-import {TicketManagerContract} from '../common/ticket-manager-contract';
+import {TicketManagerContract} from './ticket-manager-contract';
 import {Injectable} from '@nestjs/common';
 import {BaseTicketManager} from './base-ticket-manager';
 import {TicketInput} from '../ticket/model/ticket-input.model';
 import {BaseTicketInput} from '../ticket/model/base-ticket-input.model';
 import {ZendeskTicketInput} from '../ticket/model/zendesk/zendesk-ticket-input.model';
+import {ZENDESK} from 'src/constants';
 
 const APIS = {
   tickets: '/requests',
@@ -43,5 +44,8 @@ export class Zendesk extends BaseTicketManager implements TicketManagerContract 
       username: `${process.env.ZENDESK_CLIENT_MAIL}/token`,
       password: process.env.ZENDESK_AUTH_TOKEN,
     };
+  }
+  managerAsString(): string {
+    return ZENDESK;
   }
 }

@@ -1,4 +1,4 @@
-import {TicketManagerContract} from '../common/ticket-manager-contract';
+import {TicketManagerContract} from '../ticket-manager/ticket-manager-contract';
 import {compact, get} from 'lodash';
 import {Ticket} from '../ticket/model/ticket.model';
 import * as axios from 'axios';
